@@ -1,7 +1,10 @@
 package com.gdgk.sample.model;
 
 
-public class User {
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+public class User extends BaseObservable{
     public final static boolean MALE = true;
     public final static boolean FEMALE = false;
     public String avatarUrl, id, name;
@@ -57,11 +60,13 @@ public class User {
         this.level = level;
     }
 
+    @Bindable
     public int getExp() {
         return exp;
     }
 
     public void setExp(int exp) {
         this.exp = exp;
+//        notifyPropertyChanged(BR.exp);
     }
 }

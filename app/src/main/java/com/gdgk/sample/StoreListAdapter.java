@@ -2,12 +2,13 @@ package com.gdgk.sample;
 
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
+import com.gdgk.sample.databinding.StoreItemDataBinding;
 import com.gdgk.sample.model.StoreItem;
 
 import java.util.List;
@@ -23,13 +24,16 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.Item
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ItemViewHolder(LayoutInflater.from(c).inflate(R.layout.item_store, parent, false));
+        StoreItemDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(c), R.layout.item_store, parent, false);
+        ItemViewHolder holder = new ItemViewHolder(binding.getRoot());
+        holder.setBinding(binding);
+        return holder;
     }
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        holder.name.setText(mItems.get(position).getName());
-        holder.price.setText("$"+ mItems.get(position).getPrice());
+        holder.binding.setVariable(com.gdgk.sample.BR.item, mItems.get(position));
+        holder.binding.executePendingBindings();
     }
 
     @Override
@@ -38,12 +42,19 @@ public class StoreListAdapter extends RecyclerView.Adapter<StoreListAdapter.Item
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
-        private TextView name, price;
+        private StoreItemDataBinding binding;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            this.name = (TextView) itemView.findViewById(R.id.view_item_name);
-            this.price = (TextView) itemView.findViewById(R.id.view_item_price);
+            binding = DataBindingUtil.bind(itemView);
+        }
+
+        public StoreItemDataBinding getBinding() {
+            return binding;
+        }
+
+        public void setBinding(StoreItemDataBinding binding) {
+            this.binding = binding;
         }
     }
 }
