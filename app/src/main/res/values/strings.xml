@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">sample</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="profile">Profile</string>
+    <string name="avatar_name">姓名</string>
+    <string name="id">ID</string>
+    <string name="level">等級</string>
+    <string name="exp">經驗值</string>
+    <string name="add_exp">增加經驗值</string>
+    <string name="into_store">進入商店</string>
+    <string name="gender">性別</string>
+</resources>

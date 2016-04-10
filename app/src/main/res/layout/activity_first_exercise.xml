@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile"
+                android:textSize="@dimen/captial_size"/>
+
+            <!--avatar-->
+            <ImageView
+                android:id="@+id/img_avatar"
+                android:layout_width="@dimen/size_96"
+                android:layout_height="@dimen/size_96"
+                android:src="@drawable/avatar"/>
+
+            <!--id-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:text="@string/id"
+                    android:textSize="@dimen/text_16"/>
+
+                <TextView
+                    android:id="@+id/view_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_16"
+                    tools:text="0000"/>
+
+            </LinearLayout>
+
+            <!--name-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:text="@string/avatar_name"
+                    android:textSize="@dimen/text_16"/>
+
+                <TextView
+                    android:id="@+id/view_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_16"
+                    tools:text="tester"/>
+
+            </LinearLayout>
+
+            <!--gender-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:text="@string/gender"
+                    android:textSize="@dimen/text_16"/>
+
+                <ImageView
+                    android:id="@+id/img_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_male"
+                    android:textSize="@dimen/text_16"/>
+
+                <ImageView
+                    android:id="@+id/img_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_female"
+                    android:textSize="@dimen/text_16"/>
+
+            </LinearLayout>
+
+
+            <!--level-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:text="@string/level"
+                    android:textSize="@dimen/text_16"/>
+
+                <TextView
+                    android:id="@+id/view_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_16"
+                    tools:text="LV12"/>
+
+            </LinearLayout>
+
+            <!--exp-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:text="@string/exp"
+                    android:textSize="@dimen/text_16"/>
+
+                <TextView
+                    android:id="@+id/view_exp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_16"
+                    tools:text="0"/>
+
+            </LinearLayout>
+
+            <!--exp-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_add_exp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:onClick="onAddExpClick"
+                    android:text="@string/add_exp"
+                    android:textSize="@dimen/text_16"/>
+
+                <Button
+                    android:id="@+id/btn_into_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onIntoStoreClick"
+                    android:text="@string/into_store"
+                    android:textSize="@dimen/text_16"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
